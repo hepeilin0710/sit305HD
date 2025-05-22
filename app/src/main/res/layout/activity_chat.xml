@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 🔙 顶部栏：返回按钮 + 居中标题 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:text="Back"
+            android:backgroundTint="#DDDDDD"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:text="Ask AI Assistant"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0D3B66"
+            android:layout_marginStart="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- 💬 聊天消息列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <!-- ✍️ 输入区：输入框 + 发送按钮 -->
+    <LinearLayout
+        android:id="@+id/chatInputContainer"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/editUserMessage"
+            android:hint="Ask anything about your diet..."
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:text="Send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#0D3B66"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>

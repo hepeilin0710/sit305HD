@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:text="Back"
+            android:backgroundTint="#DDDDDD"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- 标题 -->
+        <TextView
+            android:text="Daily Meal Planner"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#0D3B66"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Editable Preference -->
+        <EditText
+            android:id="@+id/editPreference"
+            android:hint="Diet preference (e.g., vegetarian)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="16sp" />
+
+        <!-- Editable Allergy -->
+        <EditText
+            android:id="@+id/editAllergy"
+            android:hint="Allergy (e.g., peanut)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="16sp" />
+
+        <!-- Save to Firestore -->
+        <Button
+            android:id="@+id/btnSaveProfile"
+            android:text="Save Preferences"
+            android:backgroundTint="#7FB77E"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Mood -->
+        <EditText
+            android:id="@+id/editMood"
+            android:hint="Current mood (e.g., tired, active)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="16sp" />
+
+        <!-- Custom Preference -->
+        <EditText
+            android:id="@+id/editCustom"
+            android:hint="Custom request (e.g., want something light)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="16sp" />
+
+        <!-- Generate Plan -->
+        <Button
+            android:id="@+id/btnGenerate"
+            android:text="Generate Meal Plan"
+            android:backgroundTint="#0D3B66"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Plan Display -->
+        <TextView
+            android:id="@+id/textMealPlan"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:background="#F4F6F8"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </LinearLayout>
+</ScrollView>

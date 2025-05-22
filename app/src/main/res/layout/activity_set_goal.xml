@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 🔙 返回按钮 -->
+        <Button
+            android:id="@+id/btnBack"
+            android:text="Back"
+            android:backgroundTint="#DDDDDD"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 🎯 标题 -->
+        <TextView
+            android:text="Set Your Goal"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#0D3B66"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- ✍️ 输入目标 -->
+        <EditText
+            android:id="@+id/editGoal"
+            android:hint="e.g., control blood sugar"
+            android:background="@android:drawable/editbox_background"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 🔘 提交按钮 -->
+        <Button
+            android:id="@+id/btnSubmitGoal"
+            android:text="Submit"
+            android:backgroundTint="#0D3B66"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 🕘 查看历史 -->
+        <Button
+            android:id="@+id/btnShowHistory"
+            android:text="View History"
+            android:backgroundTint="#DDDDDD"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 🧠 建议展示 -->
+        <TextView
+            android:id="@+id/textAdvice"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:background="#F4F6F8"
+            android:visibility="gone"/>
+
+        <!-- 📋 历史目标展示 -->
+        <LinearLayout
+            android:id="@+id/layoutHistory"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
+
+
