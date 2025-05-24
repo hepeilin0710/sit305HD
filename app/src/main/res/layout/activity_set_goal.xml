@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- 🔙 返回按钮 -->
+
         <Button
             android:id="@+id/btnBack"
             android:text="Back"
@@ -18,9 +18,11 @@
             android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:foreground="@drawable/ripple_blue"
+            android:clickable="true"
             android:layout_marginBottom="16dp" />
 
-        <!-- 🎯 标题 -->
+
         <TextView
             android:text="Set Your Goal"
             android:textSize="24sp"
@@ -31,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- ✍️ 输入目标 -->
+
         <EditText
             android:id="@+id/editGoal"
             android:hint="e.g., control blood sugar"
@@ -42,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
 
-        <!-- 🔘 提交按钮 -->
+
         <Button
             android:id="@+id/btnSubmitGoal"
             android:text="Submit"
@@ -53,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
 
-        <!-- 🕘 查看历史 -->
+
         <Button
             android:id="@+id/btnShowHistory"
             android:text="View History"
@@ -63,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp" />
 
-        <!-- 🧠 建议展示 -->
+
         <TextView
             android:id="@+id/textAdvice"
             android:text=""
@@ -77,7 +79,7 @@
             android:background="#F4F6F8"
             android:visibility="gone"/>
 
-        <!-- 📋 历史目标展示 -->
+
         <LinearLayout
             android:id="@+id/layoutHistory"
             android:orientation="vertical"

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- 🔙 返回按钮 -->
+
         <Button
             android:id="@+id/btnBack"
             android:text="Back"
@@ -18,9 +18,10 @@
             android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:foreground="@drawable/ripple_blue"
+            android:clickable="true"
             android:layout_marginBottom="16dp" />
 
-        <!-- 标题 -->
         <TextView
             android:text="Log Your Meal"
             android:textSize="24sp"
@@ -31,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <!-- 📝 饮食输入 -->
+
         <EditText
             android:id="@+id/editMealContent"
             android:hint="e.g., Breakfast: eggs, Lunch: salad..."
@@ -44,7 +45,7 @@
             android:layout_marginBottom="16dp"
             android:inputType="textMultiLine" />
 
-        <!-- 提交按钮 -->
+
         <Button
             android:id="@+id/btnSubmitMeal"
             android:text="Submit"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp" />
 
-        <!-- 分析展示 -->
+
         <TextView
             android:id="@+id/textAnalysis"
             android:text=""
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone" />
 
-        <!-- 历史按钮 -->
+
         <Button
             android:id="@+id/btnShowHistory"
             android:text="View History"
@@ -75,9 +76,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:foreground="@drawable/ripple_blue"
+            android:clickable="true"
             android:layout_marginBottom="16dp" />
 
-        <!-- 历史列表展示区 -->
+
         <LinearLayout
             android:id="@+id/layoutHistory"
             android:orientation="vertical"

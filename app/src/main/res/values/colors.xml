@@ -8,6 +8,15 @@
     <color name="highlight_blue">#CCE4F7</color>
     <color name="transparent_blue">#F4F8FC</color>
     <color name="primary">#0D3B66</color>
+    <color name="primaryBlue">#0D3B66</color>
+    <color name="primaryDark">#233252</color>
+    <color name="bgGray">#F7FAFC</color>
+    <color name="lightGray">#FAFAFA</color>
+    <color name="accentGreen">#34C759</color>
+    <color name="progressBg">#E0E4ED</color>
+    <color name="textMain">#233252</color>
+    <color name="textSub">#53608F</color>
+    <color name="lineChartBlue">#1B7CFF</color>
 
 
 

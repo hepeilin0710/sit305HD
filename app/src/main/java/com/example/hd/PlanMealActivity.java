@@ -47,7 +47,7 @@ public class PlanMealActivity extends AppCompatActivity {
         backendService = new BackendService();
         uid = mAuth.getCurrentUser().getUid();
 
-        // 🔄 读取用户信息
+
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(doc -> {
                     username = doc.getString("username");
@@ -67,7 +67,7 @@ public class PlanMealActivity extends AppCompatActivity {
                     editAllergy.setText(doc.getString("allergy"));
                 });
 
-        // ✍️ 保存用户修改的偏好和过敏信息
+        // save
         btnSaveProfile.setOnClickListener(v -> {
             String newPref = editPreference.getText().toString().trim();
             String newAllergy = editAllergy.getText().toString().trim();
@@ -87,7 +87,7 @@ public class PlanMealActivity extends AppCompatActivity {
         });
 
 
-        // 📡 生成膳食建议
+        // generate
         btnGenerate.setOnClickListener(v -> {
             String pref = editPreference.getText().toString().trim();
             String allergy = editAllergy.getText().toString().trim();

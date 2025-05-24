@@ -2,6 +2,8 @@ package com.example.hd;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
@@ -50,8 +52,8 @@ public class SetGoalActivity extends AppCompatActivity {
             }
 
             backendService.submitGoal(goal, this, adviceText -> {
-                textAdvice.setText(adviceText);
                 textAdvice.setVisibility(View.VISIBLE);
+                animateTyping(textAdvice, adviceText, 25);
             });
         });
 
@@ -70,19 +72,17 @@ public class SetGoalActivity extends AppCompatActivity {
                             for (Map<String, Object> goalItem : goals) {
                                 String goal = (String) goalItem.get("goal");
                                 String advice = (String) goalItem.get("goal_advice");
-
-                                // 构建完整文本：目标 + 建议
                                 String fullText = "• " + goal + "\n\n" + advice;
 
                                 TextView item = new TextView(this);
                                 item.setText(fullText);
                                 item.setTextSize(15f);
                                 item.setPadding(16, 16, 16, 16);
-                                item.setBackgroundColor(0xFFF4F6F8); // 浅灰背景
+                                item.setBackgroundColor(0xFFF4F6F8);
 
                                 Button deleteBtn = new Button(this);
                                 deleteBtn.setText("Delete");
-                                deleteBtn.setBackgroundColor(0xFFE57373); // 红色
+                                deleteBtn.setBackgroundColor(0xFFE57373);
                                 deleteBtn.setTextColor(0xFFFFFFFF);
                                 deleteBtn.setOnClickListener(del -> {
                                     db.collection("users").document(uid)
@@ -104,6 +104,24 @@ public class SetGoalActivity extends AppCompatActivity {
                     });
         });
     }
+
+    //animateTyping
+    private void animateTyping(TextView textView, String fullText, long delayMillis) {
+        textView.setText("");
+        final int[] index = {0};
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        Runnable characterAdder = new Runnable() {
+            @Override
+            public void run() {
+                if (index[0] <= fullText.length()) {
+                    textView.setText(fullText.substring(0, index[0]));
+                    index[0]++;
+                    handler.postDelayed(this, delayMillis);
+                }
+            }
+        };
+
+        handler.post(characterAdder);
+    }
 }
-
-

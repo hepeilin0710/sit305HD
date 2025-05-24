@@ -25,6 +25,7 @@
         <activity android:name=".LogMealActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".ChatActivity" />
+        <activity android:name=".CheckInActivity" />
 
 
         <activity

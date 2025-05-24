@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class HomeActivity extends AppCompatActivity {
 
     private TextView textWelcome;
-    private Button btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback, btnLogout, btnGuidance;
+    private Button btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback,btnCheckin, btnLogout, btnGuidance;
 
     private Button[] guidanceButtons;
     private String[] guidanceTexts;
@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         btnLogMeal = findViewById(R.id.btnLogMeal);
         btnChat = findViewById(R.id.btnChat);
         btnFeedback = findViewById(R.id.btnFeedback);
+        btnCheckin = findViewById(R.id.btnCheckin);
         btnLogout = findViewById(R.id.btnLogout);
         btnGuidance = findViewById(R.id.btnGuidance);
 
@@ -55,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         btnLogMeal.setOnClickListener(v -> startActivity(new Intent(this, LogMealActivity.class)));
         btnChat.setOnClickListener(v -> startActivity(new Intent(this, ChatActivity.class)));
         btnFeedback.setOnClickListener(v -> startActivity(new Intent(this, FeedbackActivity.class)));
+        btnCheckin.setOnClickListener(v -> {startActivity(new Intent(this, CheckInActivity.class));});
 
         btnLogout.setOnClickListener(v -> {
             new AlertDialog.Builder(this)
@@ -75,13 +77,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void startGuidance() {
-        guidanceButtons = new Button[]{btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback};
+        guidanceButtons = new Button[]{btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback,btnCheckin};
         guidanceTexts = new String[]{
                 "Set Goal: Define your health goal like losing weight or gaining muscle.",
                 "View Meal Plan: Generate meals based on your goal, mood and diet.",
                 "Log Meals: Track what you eat and get nutritional feedback.",
                 "Chat with AI: Ask any food or health-related question.",
-                "Provide Feedback: Help improve suggestions with your thoughts."
+                "Provide Feedback: Help improve suggestions with your thoughts.",
+                "Personal check-in interface: You can modify your username and set up daily check-ins here. You can also view and share your check-in data."
         };
         Toast.makeText(this, "Tap 'Next' to explore each feature", Toast.LENGTH_SHORT).show();
         showGuidanceStep(0);
@@ -109,7 +112,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void resetButtonColors() {
         int color = getResources().getColor(R.color.transparent_blue);
-        for (Button btn : new Button[]{btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback}) {
+        for (Button btn : new Button[]{btnSetGoal, btnViewPlan, btnLogMeal, btnChat, btnFeedback,btnCheckin}) {
             btn.setBackgroundTintList(ColorStateList.valueOf(color));
         }
     }

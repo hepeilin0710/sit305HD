@@ -48,13 +48,13 @@ public class ChatActivity extends AppCompatActivity {
         recyclerViewChat.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewChat.setAdapter(chatAdapter);
 
-        // 🔙 返回主页
+        //return home
         btnBack.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         });
 
-        // 📤 发送用户消息
+        // sent user message
         btnSend.setOnClickListener(v -> {
             String userMessage = editUserMessage.getText().toString().trim();
             if (userMessage.isEmpty()) {
@@ -62,21 +62,21 @@ public class ChatActivity extends AppCompatActivity {
                 return;
             }
 
-            // 添加用户消息
+            // Add User Message
             chatMessages.add(new ChatMessage(userMessage, false));
             chatAdapter.notifyItemInserted(chatMessages.size() - 1);
             scrollToBottom();
 
             editUserMessage.setText("");
 
-            // 添加临时占位
+            // Add a temporary placeholder
             chatMessages.add(new ChatMessage(TYPING_INDICATOR, true));
             chatAdapter.notifyItemInserted(chatMessages.size() - 1);
             scrollToBottom();
 
-            // 发请求
+            // Send Request
             backendService.requestAsk(userMessage, this, reply -> {
-                // 替换“正在生成...”消息
+                // Replace the "Generating..." message
                 int index = chatMessages.size() - 1;
                 if (chatMessages.get(index).getMessage().equals(TYPING_INDICATOR)) {
                     chatMessages.set(index, new ChatMessage(reply, true));

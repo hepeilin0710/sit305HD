@@ -33,13 +33,13 @@ public class FeedbackActivity extends AppCompatActivity {
 
         backendService = new BackendService();
 
-        // 🔙 返回按钮逻辑
+
         btnBack.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         });
 
-        // 📤 提交反馈逻辑
+        // submit
         btnSubmit.setOnClickListener(v -> {
             String comment = editFeedback.getText().toString().trim();
 
@@ -48,7 +48,7 @@ public class FeedbackActivity extends AppCompatActivity {
                 return;
             }
 
-            btnSubmit.setEnabled(false); // 防止重复点击
+            btnSubmit.setEnabled(false);
 
             backendService.sendFeedback(comment, this, insight -> {
                 showThankYouMessage();
@@ -58,7 +58,7 @@ public class FeedbackActivity extends AppCompatActivity {
         });
     }
 
-    // ✅ 动画式感谢提示
+    // Animated thank you reminder
     private void showThankYouMessage() {
         textThankYou.setText("✅ Thank you for your feedback!");
         textThankYou.setVisibility(View.VISIBLE);

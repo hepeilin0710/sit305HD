@@ -49,7 +49,7 @@ public class BackendService {
     }
 
     public interface FeedbackCallback {
-        void onFeedbackResponse(String insightText); // 可选显示 LLM 分析
+        void onFeedbackResponse(String insightText);
     }
 
     public interface AskCallback {
@@ -114,14 +114,14 @@ public class BackendService {
                         public void onResponse(Call<FeedbackResponse> call, Response<FeedbackResponse> response) {
                             if (response.isSuccessful() && response.body() != null) {
 
-                                // 🔄 写入 Firestore 的 feedback[]
+
                                 Map<String, Object> entry = new HashMap<>();
                                 entry.put("comment", comment);
 
                                 db.collection("users").document(uid)
                                         .update("feedback", FieldValue.arrayUnion(entry))
                                         .addOnSuccessListener(unused -> {
-                                            callback.onFeedbackResponse(response.body().insight); // 可用于展示建议
+                                            callback.onFeedbackResponse(response.body().insight);
                                         });
 
                             } else {
@@ -162,7 +162,7 @@ public class BackendService {
                         @Override
                         public void onResponse(Call<LogMealResponse> call, Response<LogMealResponse> response) {
                             if (response.isSuccessful() && response.body() != null) {
-                                // ✅ 同时将记录写入 Firestore
+
                                 Map<String, Object> logEntry = new HashMap<>();
                                 logEntry.put("content", mealContent);
                                 logEntry.put("time", new Date());

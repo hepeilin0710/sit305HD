@@ -44,13 +44,13 @@ public class LogMealActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        // 🔙 返回按钮
+
         btnBack.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         });
 
-        // 📤 提交饮食内容
+
         btnSubmitMeal.setOnClickListener(v -> {
             String content = editMealContent.getText().toString().trim();
             if (TextUtils.isEmpty(content)) {
@@ -69,7 +69,7 @@ public class LogMealActivity extends AppCompatActivity {
             });
         });
 
-        // 🕘 查看历史记录
+        //history
         btnShowHistory.setOnClickListener(v -> {
             layoutHistory.removeAllViews();
             db.collection("users").document(uid).get()
