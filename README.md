@@ -43,23 +43,17 @@ java/
     ├── backend/
     │   └── BackendService.java      # Backend service request encapsulation
     ├── model/                       # Data model for communicating with the backend
-    │   ├── ask/
-    │   │   ├── AskRequest.java
-    │   │   └── AskResponse.java
-    │   ├── chat/
-    │   │   └── ChatMessage.java
-    │   ├── feedback/
-    │   │   ├── FeedbackRequest.java
-    │   │   └── FeedbackResponse.java
-    │   ├── goal/
-    │   │   ├── GoalRequest.java
-    │   │   └── GoalResponse.java
-    │   ├── logmeal/
-    │   │   ├── LogMealRequest.java
-    │   │   └── LogMealResponse.java
-    │   └── planmeal/
-    │       ├── PlanMealRequest.java
-    │       └── PlanMealResponse.java
+    │   ├── AskRequest.java
+    │   ├──  AskResponse.java
+    │   ├── ChatMessage.java
+    │   ├──  FeedbackRequest.java
+    │   ├──  FeedbackResponse.java
+    │   ├──  GoalRequest.java
+    │   ├──  GoalResponse.java
+    │   ├──  LogMealRequest.java
+    │   ├──  LogMealResponse.java
+    │   ├── PlanMealRequest.java
+    │   └── PlanMealResponse.java
     ├── network/
     │   ├── ApiService.java          # Retrofit Interface Definition
     │   └── RetrofitClient.java      # Retrofit Instance Configuration
